@@ -37,6 +37,9 @@ const deviceSchema = new mongoose.Schema({
 // Middleware to convert timestamps to IST before saving
 deviceSchema.pre('save', function (next) {
     this.realtime = moment.tz(this.realtime, 'Asia/Kolkata').format('YYYY-MM-DD HH:mm:ss');
+    // Convert timestamps to IST
+    this.createdAt = moment(this.createdAt).tz('Asia/Kolkata');
+    this.updatedAt = moment(this.updatedAt).tz('Asia/Kolkata');
     next();
 });
 
