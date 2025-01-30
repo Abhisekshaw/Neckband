@@ -2,6 +2,7 @@ const device = require('../models/device.model');
 
 // Function to add a new device entry
 exports.addDevice = async (req, res) => {
+    console.log(req.body);
     try {
         const newDevice = new device(req.body); 
         const savedDevice = await newDevice.save(); // Save to the database
