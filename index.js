@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const { connectToDatabase } = require('./config/database.config');
 const Auth = require('./routes/auth.routes');
 const deviceRoutes = require('./routes/device.routes');
+const dashboardRoutes = require('./routes/dashboard.routes');
 
 // Connect to the database
 connectToDatabase();
@@ -21,6 +22,7 @@ app.use(cookieParser());
 
 // Routes
 app.use('/api/auth', Auth);
+app.use('/api/dash', dashboardRoutes);
 app.use('/api/devices', deviceRoutes);
 
 const PORT = process.env.PORT || 8080;

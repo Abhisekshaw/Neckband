@@ -28,7 +28,6 @@ const deviceSchema = new mongoose.Schema({
     GyroX: {type: Number},
     GyroY: {type: Number},
     GyroZ: {type: Number},
-    sensor: {type: String},
     magX: {type: Number},
     magY: {type: Number},
     magZ: {type: Number},
